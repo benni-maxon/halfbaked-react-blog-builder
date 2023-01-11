@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Editor.css';
 
-export default function Editor({ setTitle, setSubtitle, setFont }) {
+export default function Editor({ setTitle, setSubtitle, setFont, setAlign }) {
   const handleTitle = (event) => {
     setTitle(event.target.value);
   };
@@ -11,6 +11,9 @@ export default function Editor({ setTitle, setSubtitle, setFont }) {
   };
   const handleFont = (event) => {
     setFont(event.target.value);
+  };
+  const handleAlign = (event) => {
+    setAlign(event.target.value);
   };
 
   return (
@@ -38,7 +41,7 @@ export default function Editor({ setTitle, setSubtitle, setFont }) {
       </div>
       <div className="form-control">
         <label>Alignment</label>
-        <div className="radio-group">
+        <div className="radio-group" onChange={handleAlign}>
           <label>
             <input name="align" type="radio" value="left" />
             <i className="ri-align-left"></i>
